@@ -25,6 +25,8 @@ typedef struct mmalcam_context {
     struct MMAL_POOL_T *camera_buffer_pool;
     struct MMAL_QUEUE_T *camera_buffer_queue;
     struct raspicam_camera_parameters_s *camera_parameters;
+
+    void (*camera_buffer_callback)(struct MMAL_PORT_T *port, struct MMAL_BUFFER_HEADER_T *buffer);
 } mmalcam_context;
 
 int mmalcam_start (struct context *);

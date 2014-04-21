@@ -9,9 +9,10 @@
 #define VIDEOSOURCEPLUGIN_H_
 
 struct context;
+struct image_data;
 
 typedef int (*video_source_start_ptr)(struct context *);
-typedef int (*video_source_next_ptr)(struct context *, unsigned char *);
+typedef int (*video_source_next_ptr)(struct context *, struct image_data* imgdat);
 typedef void (*video_source_cleanup_ptr)(struct context *);
 
 typedef struct video_source_plugin *video_source_plugin_ptr;
